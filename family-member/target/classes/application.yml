@@ -5,7 +5,7 @@ spring:
     name: family-member
   datasource:
     password: 1qazXSW@
-    url: jdbc:postgresql://postgres:5432/family
+    url: jdbc:postgresql://localhost:5432/family
     username: testuser
   jpa:
     hibernate:
@@ -19,6 +19,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://localhost:8761/eureka
     fetch-registry: true
     register-with-eureka: true

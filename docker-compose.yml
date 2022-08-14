@@ -50,6 +50,7 @@ services:
     depends_on:
       - eureka-server
       - postgres
+      - database-server
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
@@ -58,6 +59,21 @@ services:
     container_name: family-member
     ports:
       - "8082:8082"
+    networks:
+      - spring
+      - postgres
+    depends_on:
+      - eureka-server
+      - postgres
+      - database-server
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  database-server:
+    image: jarek1725/database-server:latest
+    container_name: database-server
+    ports:
+      - "8083:8083"
     networks:
       - spring
       - postgres

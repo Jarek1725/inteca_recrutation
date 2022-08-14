@@ -15,11 +15,11 @@ public record FamilyMemberController() {
     @PostMapping(path = "test")
     public FamilyMemberResponse test(){
         log.info("Get test");
-        return new FamilyMemberResponse("Test123");
+        return new FamilyMemberResponse(false);
     }
 
     @GetMapping(path = "test")
     public FamilyMemberResponse testGet(){
-        return new FamilyMemberResponse("Test123");
+        return new FamilyMemberResponse(false);
     }
 }

@@ -1,2 +1,4 @@
+clients\database\FamilyRequestBody.class
+clients\database\DatabaseClient.class
 clients\FamilyMemberClient.class
 clients\FamilyMemberResponse.class

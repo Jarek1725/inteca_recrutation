@@ -1,0 +1,5 @@
+databaseserver\family\FamilyService.class
+databaseserver\family\Family.class
+databaseserver\family\FamilyRepository.class
+databaseserver\DatabaseApp.class
+databaseserver\DatabaseController.class

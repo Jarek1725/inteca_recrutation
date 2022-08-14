@@ -1,6 +1,7 @@
 package family;
 
 import clients.FamilyMemberResponse;
+import clients.database.FamilyRequestBody;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -9,13 +10,12 @@ public record FamilyController(FamilyService familyService) {
 
     @GetMapping(path = "test")
     public FamilyMemberResponse test() {
-        return new FamilyMemberResponse("Test123");
+        return new FamilyMemberResponse(false);
     }
 
     @PostMapping(path = "test")
-    public String testPost(@RequestBody FamilyRequest familyRequest) {
-        System.out.println("TESTSTTTTSTTSTS");
-        familyService.register(familyRequest);
+    public String testPost(@RequestBody FamilyRequestBody familyRequestBody) {
+        familyService.register(familyRequestBody);
         return "TESTXD";
     }
 }

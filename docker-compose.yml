@@ -50,6 +50,8 @@ services:
     depends_on:
       - eureka-server
       - postgres
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
   family-member:
     image: jarek1725/family-member:latest
@@ -62,6 +64,8 @@ services:
     depends_on:
       - eureka-server
       - postgres
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
 networks:
   postgres:

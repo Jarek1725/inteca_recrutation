@@ -1,5 +1,4 @@
 familymember\FamilyMemberService.class
-familymember\FamilyMemberApp.class
+familymember\FamilyMemberConfig.class
 familymember\FamilyMemberController.class
-familymember\FamilyMember.class
-familymember\FamilyMemberRepository.class
+familymember\FamilyMemberApp.class

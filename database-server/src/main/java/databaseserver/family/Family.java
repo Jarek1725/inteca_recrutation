@@ -1,6 +1,10 @@
 package databaseserver.family;
 
+import databaseserver.familymember.FamilyMember;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "family")
@@ -20,6 +24,12 @@ public class Family {
 
     @Column(name = "infants_number")
     private Integer infantsNumber;
+
+    @OneToMany(
+            mappedBy = "family",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+    )
+    private List<FamilyMember> familyMemberList = new ArrayList<>();
 
     public Family() {
     }
@@ -49,5 +59,9 @@ public class Family {
 
     public Integer getInfantsNumber() {
         return infantsNumber;
+    }
+
+    public List<FamilyMember> getFamilyMemberList() {
+        return familyMemberList;
     }
 }

@@ -67,4 +67,15 @@ public record FamilyService(RestTemplate restTemplate, FamilyMemberClient family
         }
 
     }
+
+    public FamilyRequestBody getFamily(Integer familyId) {
+
+        FamilyRequestBody family = databaseClient.getFamily(familyId);
+
+        if(family==null){
+            throw new NotFoundException("Not found family with id "+familyId);
+        }
+
+        return family;
+    }
 }

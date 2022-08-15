@@ -1,9 +1,7 @@
 package clients.database;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -12,9 +10,12 @@ import java.util.List;
         path = "api/v1/database"
 )
 public interface FamilyDatabaseClient {
-    @PostMapping(path = "/create-family")
+    @PostMapping(path = "/family/create")
     Integer createFamilyDB(@RequestBody FamilyRequestBody familyRequestBody);
 
-    @PostMapping(path = "/create-member")
+    @PostMapping(path = "/family-members/create")
     boolean createMembers(@RequestBody List<FamilyMemberRequestBody> familyMembers, @RequestParam("familyId") Integer familyId);
+
+    @GetMapping(path = "/family/{id}")
+    FamilyRequestBody getFamily(@PathVariable(value = "id") Integer familyId);
 }

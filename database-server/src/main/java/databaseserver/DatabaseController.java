@@ -12,14 +12,19 @@ import java.util.List;
 @RequestMapping("api/v1/database")
 public record DatabaseController(FamilyService familyService) {
 
-    @PostMapping(path = "/create-family")
+    @PostMapping(path = "/family/create")
     public Integer createFamilyDB(@RequestBody FamilyRequestBody familyRequestBody){
         return familyService.saveFamily(familyRequestBody);
     };
 
-    @PostMapping(path = "/create-member")
+    @PostMapping(path = "/family-members/create")
     public boolean createMembers(@RequestBody List<FamilyMemberRequestBody> familyMembers, @RequestParam Integer familyId){
         familyService.saveMembers(familyMembers, familyId);
         return false;
+    }
+
+    @GetMapping(path = "/family/{id}")
+    FamilyRequestBody getFamily(@PathVariable(value = "id") Integer familyId){
+        return familyService.getFamily(familyId);
     }
 }

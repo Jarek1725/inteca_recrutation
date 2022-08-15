@@ -1,5 +1,6 @@
 family\FamilyController.class
 family\FamilyService.class
+family\BadRequestException.class
 family\FamilyApp.class
+family\NotFoundException.class
 family\FamilyConfig.class
-family\FamilyRequest.class

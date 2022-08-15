@@ -1,20 +1,23 @@
 server:
   port: 8081
+  error:
+    include-message: always
+
 spring:
   application:
     name: family
-  datasource:
-    password: 1qazXSW@
-    url: jdbc:postgresql://localhost:5432/family
-    username: testuser
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: true
+#  datasource:
+#    password: 1qazXSW@
+#    url: jdbc:postgresql://localhost:5432/family
+#    username: testuser
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
+#    show-sql: true
 
 eureka:
   client:

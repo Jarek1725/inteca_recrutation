@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
         path = "api/v1/family-member"
 )
 public interface FamilyMemberClient {
-    @GetMapping(path = "test")
-    FamilyMemberResponse testGet();
+    @GetMapping(path = "create")
+    boolean create();
 }

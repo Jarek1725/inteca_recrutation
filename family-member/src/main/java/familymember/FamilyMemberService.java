@@ -1,10 +1,15 @@
 package familymember;
 
+import clients.database.FamilyDatabaseClient;
+import clients.database.FamilyMemberRequestBody;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Service
-@RequestMapping
-public record FamilyMemberService(FamilyMemberRepository familyMemberRepository) {
-
+public record FamilyMemberService(FamilyDatabaseClient databaseClient) {
+    public void createMembers(List<FamilyMemberRequestBody> familyMembers, Integer familyId) {
+        databaseClient.createMembers(familyMembers, familyId);
+    }
 }

@@ -1,4 +1,4 @@
-package familymember;
+package databaseserver.familymember;
 
 import javax.persistence.*;
 
@@ -12,14 +12,18 @@ public class FamilyMember {
     @Column(name = "family_id")
     private Integer familyId;
 
+    @Column(name = "age")
+    private Integer age;
+
     @Column(name = "given_name")
     private String givenName;
 
     public FamilyMember() {
     }
 
-    public FamilyMember(Integer familyId, String givenName) {
+    public FamilyMember(Integer familyId, Integer age, String givenName) {
         this.familyId = familyId;
+        this.age = age;
         this.givenName = givenName;
     }
 

@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "70a82626-e09b-45ad-93d2-37a6fa129381",
+		"name": "Family",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12659905"
+	},
+	"item": [
+		{
+			"name": "Create family",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"familyName\":\"Tomaszewski\",\r\n    \"adultsNumber\":1,\r\n    \"childrenNumber\":1,\r\n    \"infantsNumber\":2,\r\n    \"familyMembers\":[\r\n        {\r\n            \"givenName\":\"Jaroslaw\",\r\n            \"age\":4\r\n        },\r\n        {\r\n            \"givenName\":\"Janusz\",\r\n            \"age\":8\r\n        },\r\n        {\r\n            \"givenName\":\"Justyna\",\r\n            \"age\":4\r\n        },\r\n        {\r\n            \"givenName\":\"Ludwiga\",\r\n            \"age\":21\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/family/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"family",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get family",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/family/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"family",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

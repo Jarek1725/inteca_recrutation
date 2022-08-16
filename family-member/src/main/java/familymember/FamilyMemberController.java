@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/family-member")
-@Slf4j
 public record FamilyMemberController(FamilyMemberService familyMemberService) {
 
     @PostMapping(path = "create")

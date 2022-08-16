@@ -17,6 +17,7 @@ public record FamilyService(FamilyRepository familyRepository, FamilyMemberRepos
                 familyRequestBody.adultsNumber(),
                 familyRequestBody.childrenNumber(),
                 familyRequestBody.infantsNumber());
+
         familyRepository.saveAndFlush(family);
         return family.getFamilyId();
     }
@@ -31,7 +32,6 @@ public record FamilyService(FamilyRepository familyRepository, FamilyMemberRepos
     }
 
     public FamilyRequestBody getFamily(Integer familyId) {
-
         Family family = familyRepository.findById(familyId).orElse(null);
 
         if(family == null){

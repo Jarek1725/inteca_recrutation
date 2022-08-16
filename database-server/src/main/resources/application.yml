@@ -5,8 +5,9 @@ spring:
     name: database-server
   datasource:
     password: 1qazXSW@
-    url: jdbc:postgresql://localhost:5432/family
-    username: testuser
+
+    url: jdbc:localhost://localhost:5432/family
+    username: familyappuser
   jpa:
     hibernate:
       ddl-auto: validate

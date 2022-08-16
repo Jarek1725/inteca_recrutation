@@ -13,7 +13,7 @@ import java.util.List;
 public record FamilyService(RestTemplate restTemplate, FamilyMemberClient familyMemberClient,
                             FamilyDatabaseClient databaseClient) {
 
-    public boolean createFamily(FamilyRequestBody familyRequest) {
+    public Integer createFamily(FamilyRequestBody familyRequest) {
 
 //        CHECK IF NUMBER OF PEOPLE IS CORRECT
         if (familyRequest.adultsNumber() + familyRequest.childrenNumber() + familyRequest.infantsNumber() ==
@@ -23,14 +23,14 @@ public record FamilyService(RestTemplate restTemplate, FamilyMemberClient family
                     familyRequest.childrenNumber(), familyRequest.adultsNumber())) {
                 Integer familyId = databaseClient.createFamilyDB(familyRequest);
                 databaseClient.createMembers(familyRequest.familyMembers(), familyId);
-                return true;
+                return familyId;
             }
 
         } else {
             throw new BadRequestException("Wrong number of family members. In array gets " + familyRequest.familyMembers().size() +
                     " expected " + (familyRequest.adultsNumber() + familyRequest.childrenNumber() + familyRequest.infantsNumber()));
         }
-        return false;
+        return -1;
     }
 
     private static boolean validateFamilyData(

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public record FamilyController(FamilyService familyService) {
 
     @PostMapping(path = "create")
-    public boolean create(@RequestBody FamilyRequestBody familyRequestBody) {
+    public Integer create(@RequestBody FamilyRequestBody familyRequestBody) {
         return familyService.createFamily(familyRequestBody);
     }
 

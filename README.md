@@ -6,7 +6,8 @@ docker-compose up
 ```
 
 Create family:
-![image](https://user-images.githubusercontent.com/59396785/184894535-a549ced2-7eef-4767-90f8-d9979e4873ec.png)
+![image](https://user-images.githubusercontent.com/59396785/184897316-8e5f2817-e6fa-4850-85d8-46d31a41d83c.png)
+
 
 Get family:
 ![image](https://user-images.githubusercontent.com/59396785/184894606-ca21b696-cf15-4876-b25e-b305d6729ea5.png)
